@@ -1,3 +1,6 @@
+from clases_base_abstractas import Subject, Observer
+
+
 class WeatherData(Subject):
     def __init__(self):
         self._observers = []
@@ -15,7 +18,7 @@ class WeatherData(Subject):
 
     def notify_observers(self):
         for observer in self._observers:
-            observer.update(self._temperature, self._humidity, self._pressure)
+            observer.update()
 
     def measurements_changed(self):
         self.notify_observers()
