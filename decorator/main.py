@@ -5,6 +5,8 @@ from beverages import Espresso, DarkRoast, HouseBlend
 from condiments import Mocha, Whip, Soy, Caramel
 from enum import StrEnum
 
+from constructor_beverages import build_beverage
+
 class Size(StrEnum):
     """Tamaños válidos de café. """
     TALL = 'TALL'
@@ -42,6 +44,11 @@ def main():
     beverage4 = Caramel( Whip( Mocha( Soy( Soy( Soy( HouseBlend(Size.TALL) ) ) ) ) ) )
     
     print(f"Pedido 4: {beverage4.get_description()} ${beverage4.cost():.2f}")
+
+    #Pedido 5:
+    print("Pedido con builder:")
+    beverage5 = build_beverage(HouseBlend, size="GRANDE", condiments=[Soy, Mocha, Mocha])
+    print(f"Pedido 5: {beverage5.get_description()} ${beverage4.cost():.2f}")
 
 if __name__ == "__main__":
     main()
