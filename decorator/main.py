@@ -3,11 +3,19 @@
 
 from beverages import Espresso, DarkRoast, HouseBlend
 from condiments import Mocha, Whip, Soy, Caramel
+from enum import StrEnum
 
+class Size(StrEnum):
+    """Tamaños válidos de café. """
+    TALL = 'TALL'
+    GRANDE = 'GRANDE'
+    VENTI = 'VENTI'
+    
 def main():
     """
     Función principal que simula la preparación de cafés en Starbuzz.
     """
+    
     print("Bienvenido a Starbuzz Coffee!")
     print("--- Preparando pedidos ---")
 
@@ -29,6 +37,11 @@ def main():
     beverage3 = Whip(beverage3)
     beverage3 = Caramel(beverage3)
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
+
+    # Pedido 4: Un HouseBlend con triple Soja, Mocha y Crema.
+    beverage4 = Caramel( Whip( Mocha( Soy( Soy( Soy( HouseBlend(Size.TALL) ) ) ) ) ) )
+    
+    print(f"Pedido 4: {beverage4.get_description()} ${beverage4.cost():.2f}")
 
 if __name__ == "__main__":
     main()
