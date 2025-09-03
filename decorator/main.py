@@ -1,9 +1,11 @@
 # main.py
 # Script principal para probar el patrón Decorator.
 
-from beverages import Espresso, DarkRoast, HouseBlend
-from condiments import Mocha, Whip, Soy, Caramel
+from beverages import Espresso, DarkRoast, HouseBlend, Decaf
+from condiments import Mocha, Whip, Soy, Caramel, Milk
 from enum import StrEnum
+
+from pretty import pretty_description
 
 from constructor_beverages import build_beverage
 
@@ -40,13 +42,18 @@ def main():
     beverage3 = Caramel(beverage3)
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
 
+
     # Pedido 4: Un HouseBlend con triple Soja, Mocha y Crema.
     beverage4 = Caramel( Whip( Mocha( Soy( Soy( Soy( HouseBlend(Size.TALL) ) ) ) ) ) )
     
     print(f"Pedido 4: {beverage4.get_description()} ${beverage4.cost():.2f}")
+    
+    print("---Usando decorador---")
+    print(f"Pedido 4: {pretty_description(beverage4)} ${beverage4.cost():.2f}")
+
 
     #Pedido 5:
-    print("Pedido con builder:")
+    print("\n---Pedido con builder---")
     beverage5 = build_beverage(HouseBlend, size="GRANDE", condiments=[Soy, Mocha, Mocha])
     print(f"Pedido 5: {beverage5.get_description()} ${beverage4.cost():.2f}")
 
