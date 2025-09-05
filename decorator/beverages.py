@@ -29,12 +29,8 @@ class Beverage(ABC):
         return self.size
     
     def set_size(self, size) -> 'Beverage':
-        tamaños_validos = ("TALL", "GRANDE", "VENTI")
-
-        if size not in tamaños_validos:
-            raise ValueError("Tamaño no válido. Ingrese: {tamaños_validos}")
-        self.size = size
-
+        self._validate_size(size)
+        self.size = size.upper()
         return self
     
     @abstractmethod

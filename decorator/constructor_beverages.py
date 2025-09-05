@@ -13,11 +13,10 @@ def build_beverage(base, size=None, condiments=None):
         beverage = base(size)
     else:
         beverage = base()
-
+    
     if condiments:
         for condiment_cls in condiments:
             beverage = condiment_cls(beverage)
-
     return beverage
 
 
