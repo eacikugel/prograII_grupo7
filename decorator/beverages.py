@@ -61,7 +61,8 @@ class DarkRoast(Beverage):
     """
     Café Dark Roast, un tipo específico de bebida.
     """
-    def __init__(self):
+    def __init__(self, size= "VENTI"):
+        super().__init__(size)
         self.description = "Café Dark Roast"
 
     def cost(self) -> float:
@@ -71,7 +72,8 @@ class Decaf(Beverage):
     """
     Café Descafeinado, un tipo específico de bebida.
     """
-    def __init__(self):
+    def __init__(self, size = "VENTI"):
+        super().__init__(size)
         self.description = "Café Descafeinado"
 
     def cost(self) -> float:
@@ -81,7 +83,8 @@ class Espresso(Beverage):
     """
     Café Espresso, un tipo específico de bebida.
     """
-    def __init__(self):
+    def __init__(self, size = "VENTI"):
+        super().__init__(size)
         self.description = "Espresso"
 
     def cost(self) -> float:
