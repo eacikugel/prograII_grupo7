@@ -36,7 +36,7 @@ def main():
 
     # Pedido 3: Un HouseBlend con Soja, Mocha y Crema.
     beverage3 = HouseBlend()
-    beverage3 = Soy(beverage3)
+    beverage3 = Mocha(beverage3)
     beverage3 = Mocha(beverage3)
     beverage3 = Whip(beverage3)
     beverage3 = Caramel(beverage3)
@@ -54,8 +54,8 @@ def main():
 
     #Pedido 5:
     print("\n---Pedido con builder---")
-    beverage5 = build_beverage(HouseBlend, size="GRANDE", condiments=[Soy, Mocha, Mocha])
-    print(f"Pedido 5: {beverage5.get_description()} ${beverage4.cost():.2f}")
+    beverage5 = build_beverage(Decaf, condiments=[Caramel, Mocha, Mocha])
+    print(f"Pedido 5: {pretty_description(beverage5)} ${beverage5.cost():.2f}")
 
 if __name__ == "__main__":
     main()
