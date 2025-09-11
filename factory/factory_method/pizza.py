@@ -24,7 +24,7 @@ class NYStyleVeggiePizza(Pizza):
         # super().__init__() 
         self.name="NY Style Veggie Pizza"; 
         self.sauce="Marinara";
-        self.toppings=["Vegan Grated Reggiano Cheese", "Mushroom","Onion","Red Pepper"]
+        self.toppings=["Grated Reggiano Cheese", "Mushroom","Onion","Red Pepper"]
 
 class NYStylePepperoniPizza(Pizza):
     def __init__(self):
@@ -36,21 +36,21 @@ class NYStylePepperoniPizza(Pizza):
 class ChicagoStyleCheesePizza(Pizza):
     def __init__(self):
         # super().__init__() 
-        self.name="Chicago Style Deep Dish Cheese"; self.sauce="Marinara";self.toppings=["Shredded Mozzarella"]
+        self.name="Chicago Style Deep Dish Cheese"; self.sauce="Plum Tomato Sauce";self.toppings=["Shredded Mozzarella"]
     def cut(self): print("Cutting the pizza into square slices")
 
 class ChicagoStyleVeggiePizza(Pizza):
     def __init__(self):
         # super().__init__() 
         self.name="Chicago Style Veggie Pizza"; 
-        self.sauce="Marinara";
-        self.toppings=["Vegan Shredded Mozzarella Cheese", "Black Olives", "Spinach", "Eggplant"]
+        self.sauce="Plum Tomato Sauce";
+        self.toppings=["Shredded Mozzarella Cheese", "Black Olives", "Spinach", "Eggplant"]
     def cut(self): print("Cutting the pizza into square slices")
 
 class ChicagoStylePepperoniPizza(Pizza):
     def __init__(self):
         # super().__init__() 
         self.name="Chicago Style Pepperoni Pizza";
-        self.sauce="Marinara"; 
+        self.sauce="Plum Tomato Sauce"; 
         self.toppings=["Shredded Mozzarella Cheese", "Sliced Pepperoni", "Black Olives"]
     def cut(self): print("Cutting the pizza into square slices")
